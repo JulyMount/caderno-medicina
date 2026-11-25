@@ -108,13 +108,13 @@ O exame de urina é dividido em três etapas: **Exame Físico**, **Exame Químic
 
 > [!example] Caso Clínico — Homem, 72 anos, diabético, acamado há 3 meses
 > **Dados:** Glicemia de jejum $= 260\text{ mg/dL}$. Urina turva, pH 5,5, Sangue moderado, Nitrito negativo, Glicose $100\text{ mg/dL}$, Esterase leucocitária 2+.
->
-> > [!question]- 1) A glicosúria é coerente? Por que leveduras são comuns no diabetes?
-> > * **Sim, é coerente.** A glicemia do paciente ($260\text{ mg/dL}$) ultrapassou o limiar máximo de reabsorção tubular renal ($\approx 180\text{ mg/dL}$), fazendo com que o excesso de glicose extravase para a urina.
-> > * **Relação com leveduras:** A urina rica em glicose (glicosúria) serve como substrato nutricional ideal para a proliferação de fungos como a *Candida* spp., somada à imunossupressão relativa causada pelo diabetes descompensado e pela estase urinária do repouso prolongado.
->
-> > [!question]- 2) Há discrepância entre Nitrito negativo e Esterase Leucocitária positiva (2+)?
-> > * **Não há discrepância.** A esterase positiva confirma inflamação/infecção urinária ativa (leucócitos presentes). O nitrito dá negativo porque o agente causador pode ser uma levedura (como *Candida*, comum nesse contexto) ou uma bactéria Gram-positiva (ex: *Enterococcus*, *Staphylococcus*), que não possuem a enzima nitrato redutase (não convertem nitrato em nitrito). Além disso, pacientes acamados ou com poliúria diabética podem não reter a urina por 4 horas na bexiga.
+
+> [!question]- 1) A glicosúria é coerente? Por que leveduras são comuns no diabetes?
+> * **Sim, é coerente.** A glicemia do paciente ($260\text{ mg/dL}$) ultrapassou o limiar máximo de reabsorção tubular renal ($\approx 180\text{ mg/dL}$), fazendo com que o excesso de glicose extravase para a urina.
+> * **Relação com leveduras:** A urina rica em glicose (glicosúria) serve como substrato nutricional ideal para a proliferação de fungos como a *Candida* spp., somada à imunossupressão relativa causada pelo diabetes descompensado e pela estase urinária do repouso prolongado.
+
+> [!question]- 2) Há discrepância entre Nitrito negativo e Esterase Leucocitária positiva (2+)?
+> * **Não há discrepância.** A esterase positiva confirma inflamação/infecção urinária ativa (leucócitos presentes). O nitrito dá negativo porque o agente causador pode ser uma levedura (como *Candida*, comum nesse contexto) ou uma bactéria Gram-positiva (ex: *Enterococcus*, *Staphylococcus*), que não possuem a enzima nitrato redutase (não convertem nitrato em nitrito). Além disso, pacientes acamados ou com poliúria diabética podem não reter a urina por 4 horas na bexiga.
 
 ## Diagnóstico Laboratorial do Trato Reprodutor
 

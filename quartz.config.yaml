@@ -3,7 +3,7 @@ configuration:
   pageTitle: Caderno de Medicina
   pageTitleSuffix: ""
   enableSPA: true
-  enablePopovers: true
+  enablePopovers: false
   analytics:
     provider: plausible
   locale: en-US
@@ -13,6 +13,11 @@ configuration:
     - templates
     - .obsidian
     - "**/flashcards-*"
+    - "06 - Flashcards"
+    - "05 - Database"
+    - "01 - Modelos"
+    - "03 - Projetos Pessoais"
+    - "04 - Livros"
     - Modelo/**
   theme:
     fontOrigin: googleFonts

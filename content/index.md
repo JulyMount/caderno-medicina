@@ -19,12 +19,11 @@ title: Caderno de Medicina
   <div class="liquid-card">
     <div class="card-header">
       <h3>Patologia</h3>
-      <span class="pill-count">5 notas</span>
+      <span class="pill-count">2 aulas</span>
     </div>
     <ul class="lesson-list">
       <li><a href="./02---Medicina/Patologia/Doença-de-Chagas">Doença de Chagas</a></li>
       <li><a href="./02---Medicina/Patologia/Infecções-do-Trato-Urinário-e-Reprodutor">Trato Urinário e Reprodutor</a></li>
-      <li><a href="./02---Medicina/Patologia/Trypanosoma-cruzi">Trypanosoma cruzi</a></li>
     </ul>
     <a class="view-all-btn" href="./02---Medicina/Patologia/">Ver todas as anotações →</a>
   </div>

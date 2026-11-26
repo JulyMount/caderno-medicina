@@ -287,6 +287,8 @@ layout:
       exclude:
         - reader-mode
       positions:
+        beforeBody:
+          - breadcrumbs
         right: []
     canvas: {}
     bases: {}

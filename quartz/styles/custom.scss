@@ -69,15 +69,18 @@ body[data-slug="index"] article hr {
 .sidebar.left {
   display: contents !important;
 
-  > *:not(.darkmode):not(.search):not(:has(.darkmode)):not(:has(.search)) {
+  > *:not(.darkmode):not(.search):not(.page-title):not(:has(.darkmode)):not(:has(.search)):not(:has(.page-title)) {
     display: none !important;
   }
 
-  .page-title,
   .explorer,
   .readermode {
     display: none !important;
   }
+}
+
+body[data-slug="index"] .page-title {
+  display: none !important;
 }
 
 /* Botão Lua/Sol flutuante em Liquid Glass no canto superior direito */
@@ -215,9 +218,9 @@ body[data-slug="index"] {
 }
 
 .search > .search-container {
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  background: rgba(15, 23, 42, 0.18) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  background: rgba(15, 23, 42, 0.35) !important;
 
   > .search-space {
     max-width: 820px !important;
@@ -226,16 +229,24 @@ body[data-slug="index"] {
       border-radius: 24px !important;
       background: linear-gradient(
         135deg,
-        rgba(255, 255, 255, 0.72) 0%,
-        rgba(255, 255, 255, 0.45) 100%
+        rgba(255, 255, 255, 0.86) 0%,
+        rgba(255, 255, 255, 0.68) 100%
       ) !important;
-      backdrop-filter: blur(26px) saturate(200%) !important;
-      -webkit-backdrop-filter: blur(26px) saturate(200%) !important;
-      border: 1px solid rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(28px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.9) !important;
       box-shadow:
-        0 24px 60px rgba(15, 23, 42, 0.2),
+        0 24px 60px rgba(15, 23, 42, 0.22),
         inset 0 1.5px 1px rgba(255, 255, 255, 0.95),
         inset -1.5px -1.5px 2px rgba(232, 121, 249, 0.25) !important;
+    }
+
+    /* Remove qualquer borda/caixa duplicada dentro do campo de texto */
+    input {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      outline: none !important;
     }
 
     > input {
@@ -243,13 +254,22 @@ body[data-slug="index"] {
       padding: 0.85rem 1.4rem !important;
       font-size: 1rem !important;
       margin-bottom: 0.85rem !important;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.86) 0%,
+        rgba(255, 255, 255, 0.68) 100%
+      ) !important;
+      border: 1px solid rgba(255, 255, 255, 0.9) !important;
+      box-shadow:
+        0 16px 40px rgba(15, 23, 42, 0.16),
+        inset 0 1.5px 1px rgba(255, 255, 255, 0.95) !important;
     }
 
     > .search-layout {
       overflow: hidden !important;
 
       > .results-container {
-        border-right: 1px solid rgba(255, 255, 255, 0.45) !important;
+        border-right: 1px solid rgba(15, 23, 42, 0.08) !important;
         padding: 0.5rem !important;
 
         .result-card {
@@ -262,7 +282,7 @@ body[data-slug="index"] {
 
           &:hover,
           &.focus {
-            background: rgba(255, 255, 255, 0.55) !important;
+            background: rgba(255, 255, 255, 0.72) !important;
             transform: translate3d(3px, 0, 0) !important;
           }
 
@@ -283,18 +303,19 @@ body[data-slug="index"] {
 }
 
 :root[saved-theme="dark"] .search > .search-container {
-  background: rgba(5, 4, 14, 0.45) !important;
+  background: rgba(5, 4, 14, 0.62) !important;
 
   > .search-space {
-    > * {
+    > *,
+    > input {
       background: linear-gradient(
         135deg,
-        rgba(24, 21, 48, 0.72) 0%,
-        rgba(14, 12, 30, 0.55) 100%
+        rgba(22, 19, 44, 0.88) 0%,
+        rgba(13, 11, 28, 0.80) 100%
       ) !important;
-      border: 1px solid rgba(255, 255, 255, 0.18) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
       box-shadow:
-        0 28px 65px rgba(0, 0, 0, 0.6),
+        0 28px 65px rgba(0, 0, 0, 0.65),
         inset 0 1.5px 1px rgba(255, 255, 255, 0.24),
         inset -1.5px -1.5px 2px rgba(217, 70, 239, 0.24) !important;
     }
@@ -305,14 +326,14 @@ body[data-slug="index"] {
       .result-card {
         &:hover,
         &.focus {
-          background: rgba(255, 255, 255, 0.1) !important;
+          background: rgba(255, 255, 255, 0.11) !important;
         }
       }
     }
   }
 }
 
-/* 4. PÁGINAS INTERNAS (AULAS E PASTAS): PAINEL LIQUID GLASS + BOTÃO HOME */
+/* 4. PÁGINAS INTERNAS (AULAS, PASTAS E TAGS): PAINEL LIQUID GLASS + BOTÃO HOME */
 body:not([data-slug="index"]) {
   .search,
   .frontmatter-container,
@@ -322,11 +343,12 @@ body:not([data-slug="index"]) {
   .tags,
   ul.tags,
   .content-meta,
+  .breadcrumb-container,
   footer {
     display: none !important;
   }
 
-  /* Esconde o título automático apenas dentro de aulas (mantém na página de pasta) */
+  /* Esconde o título automático apenas dentro de aulas (mantém na página de pasta e tag) */
   &:not(:has(.page-listing)) .article-title {
     display: none !important;
   }
@@ -338,59 +360,56 @@ body:not([data-slug="index"]) {
     height: auto !important;
   }
 
-  .breadcrumb-container {
+  /* Botão flutuante "← Home" garantido em todas as páginas internas (incluindo /tags/) */
+  .page-title {
     display: block !important;
     margin: 0 !important;
     padding: 0 !important;
+    font-size: 0 !important;
 
-    .breadcrumb-element:not(:first-child) {
-      display: none !important;
-    }
+    a {
+      position: fixed !important;
+      top: 1.5rem !important;
+      left: 1.75rem !important;
+      z-index: 999 !important;
+      height: 44px !important;
+      padding: 0 1.15rem !important;
+      border-radius: 999px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.45rem !important;
+      font-size: 0.85rem !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      color: inherit !important;
+      background: rgba(255, 255, 255, 0.38) !important;
+      backdrop-filter: blur(16px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.78) !important;
+      box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.12),
+        inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease !important;
 
-    .breadcrumb-element:first-child {
-      p {
-        display: none !important;
+      &::before {
+        content: "←";
+        font-size: 1rem;
+        transition: transform 0.25s ease;
       }
 
-      a {
-        position: fixed !important;
-        top: 1.5rem !important;
-        left: 1.75rem !important;
-        z-index: 999 !important;
-        height: 44px !important;
-        padding: 0 1.15rem !important;
-        border-radius: 999px !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 0.45rem !important;
-        font-size: 0.85rem !important;
-        font-weight: 700 !important;
-        text-decoration: none !important;
-        color: inherit !important;
-        background: rgba(255, 255, 255, 0.38) !important;
-        backdrop-filter: blur(16px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-        border: 1px solid rgba(255, 255, 255, 0.78) !important;
+      &::after {
+        content: "Home";
+        font-size: 0.85rem;
+      }
+
+      &:hover {
+        transform: translate3d(0, -2px, 0) scale(1.05) !important;
         box-shadow:
-          0 8px 24px rgba(15, 23, 42, 0.12),
-          inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
-        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease !important;
+          0 12px 28px rgba(56, 189, 248, 0.25),
+          inset 0 1px 1px #ffffff !important;
 
         &::before {
-          content: "←";
-          font-size: 1rem;
-          transition: transform 0.25s ease;
-        }
-
-        &:hover {
-          transform: translate3d(0, -2px, 0) scale(1.05) !important;
-          box-shadow:
-            0 12px 28px rgba(56, 189, 248, 0.25),
-            inset 0 1px 1px #ffffff !important;
-
-          &::before {
-            transform: translate3d(-3px, 0, 0);
-          }
+          transform: translate3d(-3px, 0, 0);
         }
       }
     }
@@ -430,7 +449,7 @@ body:not([data-slug="index"]) {
     }
   }
 
-  /* ESTILO EXCLUSIVO DA PÁGINA DE PASTA ("Ver todas as anotações →") */
+  /* ESTILO EXCLUSIVO DAS PÁGINAS DE PASTA E TAGS ("Ver todas as anotações →") */
   &:has(.page-listing) {
     /* Esconde a caixa vazia que o Quartz gera antes da lista */
     article {
@@ -524,7 +543,7 @@ body:not([data-slug="index"]) {
 }
 
 :root[saved-theme="dark"] body:not([data-slug="index"]) {
-  .breadcrumb-container .breadcrumb-element:first-child a {
+  .page-title a {
     background: rgba(255, 255, 255, 0.08) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     box-shadow:

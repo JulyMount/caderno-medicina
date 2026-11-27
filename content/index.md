@@ -30,11 +30,16 @@ title: Caderno de Medicina
 
   <div class="liquid-card">
     <div class="card-header">
-      <h3>Próximas Disciplinas</h3>
-      <span class="pill-count">Em breve</span>
-    </div>
-    <ul class="lesson-list">
-      <li><a href="#em-breve">Novos resumos em preparação</a></li>
-    </ul>
+    <h3>Farmacologia</h3>
+    <span class="badge">1 aula</span>
   </div>
+  
+  <a href="./Farmacologia/5.1.-Farmacologia-no-DM1-e-DM2" class="aula-link">
+    Farmacologia no DM1 e DM2
+  </a>
+  
+  <a href="./Farmacologia/" class="ver-todas">
+    Ver todas as anotações →
+  </a>
+</div>
 </div>
